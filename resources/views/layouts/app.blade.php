@@ -53,9 +53,17 @@
                         </li>
                         @endif
                         @else
+
                         <li><a class="nav-link" href="{{ route('users.index') }}"><b>Users</b></a></li>
+                        @can('role-list')
                         <li><a class="nav-link" href="{{ route('roles.index') }}"><b>Roles</b></a></li>
+                        @endcan
+                        @can('category-list')
+                        <li><a class="nav-link" href="{{ route('categories.index') }}"><b>Categories</b></a></li>
+                        @endcan
+                        @can('product-list')
                         <li><a class="nav-link" href="{{ route('products.index') }}"><b>Products</b></a></li>
+                        @endcan
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><b>
