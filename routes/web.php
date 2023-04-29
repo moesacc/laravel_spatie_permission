@@ -25,7 +25,7 @@ Route::view('/', 'auth.login')->name('login_1');
 
 Auth::routes();
 
-// Route::get('/home', [UserController::class, 'index'])->name('user');
+// Route::get('/home/edit/{$id}', [UserController::class, 'index'])->name('home.edit');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', RoleController::class);
